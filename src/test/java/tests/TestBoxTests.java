@@ -1,13 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-//import io.github.bonigarcia.wdm.WebDriverManager;
-//import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 
@@ -15,7 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-//import static java.lang.Thread.sleep;
+
 
 public class TestBoxTests {
 
@@ -42,22 +37,22 @@ public class TestBoxTests {
         $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__day--024").click();
         //$("[aria-label$='May 24th, 1984']").click();
-       // $(byText("24")).click();
-       // $("react-datepicker__day--024").click();
+        // $(byText("24")).click();
+        // $("react-datepicker__day--024").click();
         $("#subjectsInput").setValue("English").pressEnter();
         $(byText("Music")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/mem.jpg"));
         $("#currentAddress").setValue("Rome");
-      //  $("#state").scrollTo().click();
+        //  $("#state").scrollTo().click();
         $("#react-select-3-input").setValue("Uttar Pradesh").pressEnter();
         $("#react-select-4-input").setValue("Agra").pressEnter();
         //$("#city").scrollTo().click();
-       // $(byText("Agra")).click();
+        // $(byText("Agra")).click();
 
         $("#submit").click();
 
-$("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-$(".table-responsive").$(byText("Student Name"))
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").$(byText("Student Name"))
                 .parent().shouldHave(text("Alex Bond"));
         $(".table-responsive").$(byText("Student Email"))
                 .parent().shouldHave(text("alex@compani.com"));
@@ -75,12 +70,10 @@ $(".table-responsive").$(byText("Student Name"))
                 .parent().shouldHave(text("mem.jpg"));
         $(".table-responsive").$(byText("Address"))
                 .parent().shouldHave(text("Rome"));
-       // $(".table-responsive").shouldHave(text("Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India"));
         $(".table-responsive").$(byText("State and City"))
                 .parent().shouldHave(text("Uttar Pradesh Agra"));
 
-     //   $("#closeLargeModal").click();
-           $("#closeLargeModal").click();
+        $("#closeLargeModal").click();
 
     }
 }
